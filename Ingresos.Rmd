@@ -1,0 +1,238 @@
+---
+title: "Variable Ingresos"
+output:
+  html_document:
+    df_print: paged
+---
+
+## Scrapping:
+- PBI:
+```{r}
+library(htmltab)
+link_PBI="https://www.cia.gov/library/publications/resources/the-world-factbook/fields/208rank.html" 
+linkPath_PBI = '//*[@id="rankOrder"]'
+PBI = htmltab(doc = link_PBI, 
+                     which =linkPath_PBI)
+```
+- IHDI:
+
+```{r}
+link_IHDI="https://en.wikipedia.org/wiki/List_of_countries_by_inequality-adjusted_HDI" 
+linkPath_IHDI = '//*[@id="mw-content-text"]/div[1]/table'
+IHDI = htmltab(doc = link_IHDI, 
+                     which =linkPath_IHDI)
+```
+
+- Presupuesto publico:
+
+```{r}
+link_budget="https://en.wikipedia.org/wiki/List_of_countries_by_government_budget" 
+linkPath_budget = '//*[@id="mw-content-text"]/div[1]/table'
+budget = htmltab(doc = link_budget, 
+                     which =linkPath_budget)
+```
+
+- Tasas de impuesto:
+
+```{r}
+link_taxRate="https://en.wikipedia.org/wiki/List_of_countries_by_tax_rates" 
+linkPath_taxRate = '//*[@id="mw-content-text"]/div[1]/table[4]'
+tax = htmltab(doc = link_taxRate, 
+                     which =linkPath_taxRate)
+```
+
+## Limpieza:
+
+- PBI:
+
+```{r}
+PBI=PBI[,-c(1,4)]
+```
+
+```{r}
+colnames(PBI)[2] <- "pbi"
+```
+
+```{r}
+library(readr)
+PBI$pbi=parse_number(PBI$pbi)
+```
+
+```{r}
+str(PBI)
+```
+```{r}
+row.names(PBI)=NULL
+```
+
+```{r}
+PBI[14, 1]='South Korea'
+PBI[103, 1]='Dem. Rep. of the Congo'
+PBI[118, 1]='North Korea'
+PBI[133, 1]='Rep. of the Congo' 
+PBI[156, 1]='The Bahamas'
+PBI[176, 1]='Gambia'
+PBI[215, 1]='Micronesia'
+PBI[220, 1]='Falkland Islands'
+```
+
+- IHDI:
+
+```{r}
+IHDI=IHDI[,-c(1,5,6)]
+```
+
+```{r}
+colnames(IHDI)[2]="ihdi"
+colnames(IHDI)[3]="hdi"
+```
+
+```{r}
+IHDI$Country=gsub('Â',"",IHDI$Country)
+```
+
+```{r}
+library(stringr)
+IHDI$Country=str_trim(IHDI$Country) 
+```
+
+```{r}
+str(IHDI)
+```
+
+```{r}
+IHDI[,c(2:3)]= lapply(IHDI[,c(2:3)], as.numeric) 
+```
+
+```{r}
+str(IHDI)
+```
+```{r}
+row.names(IHDI)=NULL
+```
+
+```{r}
+IHDI = IHDI[-c(21,81),] 
+```
+
+```{r}
+row.names(IHDI)=NULL
+```
+
+```{r}
+IHDI[97, 1]='Sao Tome and Principe' 
+IHDI[132, 1]="Cote d'Ivoire"
+```
+
+- Presupuesto:
+
+```{r}
+budget = budget[,-c(1,7)]
+```
+
+```{r}
+colnames(budget) = c("Country", "Revenue","Expenditure","Surplus","SurplusPercent") 
+```
+
+```{r}
+budget$Country=gsub('Â',"",budget$Country)
+budget$Country=str_trim(budget$Country) 
+```
+
+```{r}
+budget$Revenue=gsub(',',"",budget$Revenue)
+budget$Expenditure=gsub(',',"",budget$Expenditure)
+budget$Surplus=gsub(',',"",budget$Surplus)
+```
+
+```{r}
+budget$Revenue=gsub('-',NA,budget$Revenue)
+budget$Expenditure=gsub('-',NA,budget$Expenditure)
+budget$Surplus=gsub('-',NA,budget$Surplus)
+budget$SurplusPercent=gsub('-',NA,budget$SurplusPercent)
+```
+
+```{r}
+budget$Surplus=gsub('âˆ’',"-",budget$Surplus)
+budget$SurplusPercent=gsub('âˆ’',"-",budget$SurplusPercent)
+```
+
+```{r}
+budget$SurplusPercent=gsub('%',"",budget$SurplusPercent)
+```
+
+```{r}
+budget$SurplusPercent=gsub('Â',"",budget$SurplusPercent)
+```
+
+```{r}
+str(budget)
+```
+```{r}
+budget[,c(2:5)]= lapply(budget[,c(2:5)], as.numeric) 
+```
+```{r}
+row.names(budget)=NULL
+```
+
+```{r}
+budget[13, 1]='South Korea' 
+budget[14, 1]='Netherlands' 
+budget[124, 1]='Dem. Rep. of the Congo'
+budget[125, 1]='North Korea'
+budget[137, 1]='Rep. of the Congo'
+budget[206, 1]='Micronesia'
+```
+
+
+- Tasas de Impuesto:
+
+```{r}
+tax=tax[,-c(3,6)]
+```
+
+```{r}
+colnames(tax) = c("Country","CorporatePercent", "IncomeHighPercent","VATpercent")
+```
+
+```{r}
+tax$Country=gsub('Â',"",tax$Country)
+tax$Country=str_trim(tax$Country) 
+```
+
+```{r}
+tax$CorporatePercent=str_split(tax$CorporatePercent,pattern = '%',simplify = T)[,1]
+tax$CorporatePercent=gsub('N/A',NA,tax$CorporatePercent)
+```
+
+```{r}
+tax$IncomeHighPercent=str_split(tax$IncomeHighPercent,pattern = '%',simplify = T)[,1]
+tax$IncomeHighPercent=gsub('N/A',NA,tax$IncomeHighPercent)
+```
+
+```{r}
+tax$VATpercent=str_split(tax$VATpercent,pattern = '%',simplify = T)[,1]
+tax$VATpercent=gsub('N/A',NA,tax$VATpercent)
+```
+
+```{r}
+row.names(tax)=NULL
+```
+
+```{r}
+tax[45, 1]='Dem. Rep. of the Congo' 
+tax[46, 1]='Rep. of the Congo'
+tax[50, 1]='Curacao'
+tax[64, 1]='Eswatini'
+tax[67, 1]='Micronesia'
+tax[175, 1]='Sao Tome and Principe'
+```
+
+## Merge:
+
+```{r}
+Base_final = merge(budget,IHDI, by="Country", all=T)
+Base_final = merge(Base_final,PBI, by="Country", all=T)
+Base_final = merge(Base_final,tax, by="Country", all=T)
+```
+
