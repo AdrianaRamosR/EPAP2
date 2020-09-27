@@ -1,0 +1,225 @@
+"Country","CorporatePercent","IncomeHighPercent","VATpercent"
+"Afghanistan","20","20","0"
+"Albania","15","23","20"
+"Algeria","26","35","19"
+"American Samoa","44","6","0"
+"Andorra","10","10","4.5"
+"Angola","30","17","10"
+"Anguilla","0","0","0"
+"Argentina","30","35","21"
+"Armenia","20","36","20"
+"Aruba","25","58.95","1.5"
+"Australia","30","45","10"
+"Austria","25","55","20"
+"Azerbaijan","20","25","18"
+"Azores","13.6","36.2","4"
+"Bahamas","0","0","12"
+"Bahrain","0","0","5"
+"Bangladesh","35","25","15"
+"Barbados","5.5","38","17.5"
+"Belarus","18","17","20"
+"Belgium","29.58","50","21"
+"Belize",NA,"25","12.5"
+"Benin","35","35","18"
+"Bermuda","0",NA,NA
+"Bhutan","26","25",NA
+"Bolivia","29","25","13"
+"Bosnia and Herzegovina","10","10","17"
+"Botswana","22","25","12"
+"Brazil","34","27.5","25"
+"Brunei","20","0",NA
+"Bulgaria","10","10","20"
+"Burkina Faso","27.5","25","18"
+"Burundi","35","35","18"
+"Cambodia","20","20","10"
+"Cameroon","31.5","35","19.25"
+"Canada","38","44.5","15"
+"Cape Verde","25","27.5","15"
+"Cayman Islands","0","0","0"
+"Central African Republic","30","50","19"
+"Chad",NA,NA,NA
+"Chile","27","35","19"
+"China","25","45","13"
+"Colombia","33","35","19"
+"Comoros",NA,NA,NA
+"Cook Islands","30","30","15"
+"Dem. Rep. of the Congo","35","40","20"
+"Rep. of the Congo","30",NA,"18.9"
+"Costa Rica","30","25","13"
+"Croatia","18","40","25"
+"Cuba","30","50","20"
+"Curacao","22","46.5","6"
+"Cyprus","12.5","35","19"
+"Czech Republic","19","45.7","21"
+"Denmark","22","55.8584","25"
+"Djibouti",NA,NA,NA
+"Dominica","25","35","15"
+"Dominican Republic","27","25","18"
+"East Timor",NA,NA,NA
+"Ecuador","25","35","12"
+"Egypt","22.5","22.5","14"
+"El Salvador","30","30","13"
+"Equatorial Guinea",NA,NA,NA
+"Eritrea",NA,NA,NA
+"Estonia","0","20","20"
+"Eswatini","27.5","33","15"
+"Ethiopia",NA,NA,NA
+"Falkland Islands","26","26","0"
+"Micronesia",NA,NA,NA
+"Fiji","20","20","9"
+"Finland","20","56.85","24"
+"France","31","45","20"
+"Gabon","35","35","18"
+"Gambia","31","30",NA
+"Germany","29.65","47.475","19"
+"Georgia","0","20","18"
+"Ghana",NA,NA,"3"
+"Gibraltar","10","40","0"
+"Greece","28","45","24"
+"Grenada",NA,NA,NA
+"Guatemala","25","7","12"
+"Guinea",NA,NA,NA
+"Guinea-Bissau",NA,NA,NA
+"Guyana","30","33⅓","16"
+"Guernsey","0","20","0"
+"Haiti","30","30","10"
+"Honduras",NA,NA,NA
+"Hong Kong","16.5","15","0"
+"Hungary","9","15","27"
+"Iceland","20","46","24"
+"India","25.17","30","28"
+"Indonesia","25","30","10"
+"Iran","25","35","9"
+"Iraq","15","15","0-300"
+"Ireland","12.5","52","23"
+"Isle of Man","0","20","20"
+"Israel","23","50","17"
+"Italy","27.9","47","22"
+"Ivory Coast",NA,NA,NA
+"Jamaica","33.3","25","20"
+"Japan","29.74","55.945","10"
+"Jersey","0","20","5"
+"Jordan","20","25","16"
+"Kazakhstan","20","10","13"
+"Kenya","30","30","16"
+"Kiribati",NA,NA,NA
+"Kosovo","10","10","18"
+"Kuwait","0","0","0"
+"North Korea","25","20","4"
+"South Korea","24.2","42","10"
+"Kyrgyzstan",NA,NA,NA
+"Laos",NA,NA,NA
+"Latvia","0","31.4","21"
+"Lebanon","17","25","11"
+"Lesotho",NA,NA,NA
+"Liberia","25",NA,NA
+"Libya",NA,NA,NA
+"Liechtenstein","12.5","24","7.7"
+"Lithuania","15","42.77","21"
+"Luxembourg","28.69","45.78","17"
+"Macau","12","12","0"
+"Madagascar",NA,NA,NA
+"Madeira","5","45.1","5"
+"Malawi",NA,NA,NA
+"Malaysia","24","28","10"
+"Maldives","15","15","6"
+"Mali",NA,NA,NA
+"Malta","35",NA,"18"
+"Marshall Islands",NA,"12","4"
+"Mauritania",NA,NA,NA
+"Mauritius","15","15","15"
+"Mexico","30","35","16"
+"Moldova","12","12","20"
+"Monaco","28","0","19.6"
+"Mongolia","10","10","10"
+"Montenegro","9","12.65","21"
+"Montserrat",NA,NA,NA
+"Morocco","31","38","20"
+"Mozambique",NA,NA,NA
+"Myanmar",NA,NA,NA
+"Namibia","32","37","15"
+"Nauru",NA,NA,NA
+"Nepal","30","36","13"
+"Netherlands","25","49.50","21"
+"New Zealand","28","33","15"
+"New Caledonia","30","40",NA
+"Nicaragua",NA,NA,NA
+"Niger",NA,NA,NA
+"Nigeria","30","24","7.5"
+"Niue",NA,NA,"12.5"
+"Norfolk Island",NA,NA,NA
+"North Macedonia","10","18","18"
+"Norway","23","23","25"
+"Oman","15","0","0"
+"Pakistan","31","31","17"
+"Palau",NA,NA,NA
+"Palestine","15","15","14.5"
+"Panama","25","27","7"
+"Papua New Guinea",NA,NA,NA
+"Paraguay","10","10","10"
+"Peru","30","30","16"
+"Philippines","30","35","12"
+"Pitcairn Islands",NA,NA,NA
+"Poland","19","32","23"
+"Portugal","21","48","23"
+"Puerto Rico","20","33.34","11.5"
+"Qatar","10","0","0"
+"Romania","16","10","19"
+"Russia","20","47","20"
+"Rwanda","30","30","18"
+"Saint Kitts and Nevis","0","0",NA
+"Saint Lucia",NA,NA,NA
+"Saint Pierre and Miquelon",NA,NA,NA
+"Saint Vincent and the Grenadines",NA,NA,NA
+"Samoa",NA,NA,NA
+"San Marino","17","50","0"
+"Sao Tome and Principe",NA,NA,NA
+"Sark","0","0","0"
+"Saudi Arabia","15","2.5","15"
+"Senegal","25","50","20"
+"Serbia","15","25","20"
+"Seychelles","40","15","15"
+"Sierra Leone",NA,NA,NA
+"Singapore","17","22","7"
+"Sint Maarten",NA,NA,NA
+"Slovakia","22","25","20"
+"Slovenia","19","50","22"
+"Solomon Islands",NA,NA,NA
+"Somalia",NA,NA,NA
+"South Africa","28","45","15"
+"South Sudan",NA,NA,NA
+"Spain","25","52","21"
+"Sri Lanka","30","15","12"
+"Sudan",NA,NA,NA
+"Suriname","36","38",NA
+"Sweden","21.4","57","25"
+"Switzerland","17.92","11.5","7.7"
+"Syria","22","15",NA
+"Taiwan","20","40","5"
+"Tajikistan","13","13","18"
+"Tanzania","30","30","18"
+"Thailand","20","35","7"
+"Togo",NA,NA,NA
+"Tokelau",NA,NA,NA
+"Tonga",NA,NA,NA
+"Trinidad and Tobago","25","25","12.5"
+"Tunisia","30","35","18"
+"Turkey","22","40","18"
+"Turkmenistan",NA,NA,NA
+"Turks and Caicos Islands",NA,NA,NA
+"Tuvalu",NA,NA,NA
+"Uganda","30",NA,"18"
+"Ukraine","18","18","20"
+"United Arab Emirates","0","0","5"
+"United Kingdom","19","47","20"
+"United States","21","51.8","11.725"
+"Uruguay","25","30","22"
+"Uzbekistan","12","12","20"
+"Vanuatu",NA,NA,NA
+"Venezuela","34","34","16"
+"Vietnam","20","35","10"
+"British Virgin Islands","0","0",NA
+"U.S. Virgin Islands","10",NA,NA
+"Yemen","20","15","2"
+"Zambia","35","30","16"
+"Zimbabwe","25","45","15"
