@@ -1,0 +1,116 @@
+---
+title: "Variable Salud"
+output:
+  html_document:
+    df_print: paged
+---
+## Scrapping
+
+- Infraestructura Salud:
+
+```{r}
+library(rio)
+link_infra = "https://raw.githubusercontent.com/AdrianaRamosR/EPAP2/master/health_infraestructure.csv"
+health_infra=import(link_infra)
+```
+
+- Camas por 1000 habitantes:
+
+```{r}
+library(htmltab)
+link_BEDS="https://www.cia.gov/library/publications/resources/the-world-factbook/fields/360.html" 
+linkPath_BEDS = '//*[@id="fieldListing"]'
+BEDS = htmltab(doc = link_BEDS, 
+                     which =linkPath_BEDS)
+```
+- Equipo medico:
+
+```{r}
+link_equip = "https://raw.githubusercontent.com/AdrianaRamosR/EPAP2/master/health_equipment.csv"
+equipment=import(link_equip)
+```
+
+## Limpieza
+
+- Infraestructura Salud:
+```{r}
+health_infra<-subset(health_infra, Year!=" 2010")
+```
+
+```{r}
+health_infra[,c(2)]=NULL
+```
+
+```{r}
+colnames(health_infra) = c("Country", "HealthPosts","HealthCenters","RuralHospitals","ProvHospitals","SpecHospitals","Hospitals")
+```
+
+```{r}
+str(health_infra)
+```
+```{r}
+row.names(health_infra)=NULL
+```
+
+```{r}
+health_infra[13, 1]='Bolivia'
+health_infra[28, 1]="Cote d'Ivoire"
+health_infra[33, 1]="North Korea"
+health_infra[34, 1]="Dem. Rep. of the Congo"
+health_infra[69, 1]="Laos"
+health_infra[89, 1]="Micronesia"
+health_infra[105, 1]="South Korea"
+health_infra[106, 1]="Moldova"
+health_infra[107, 1]="Macedonia"
+```
+
+- Camas por 1000 habitantes:
+
+```{r}
+colnames(BEDS)[2] <- "beds"
+```
+
+```{r}
+library(readr)
+BEDS$beds= parse_number(BEDS$beds)
+```
+
+```{r}
+row.names(BEDS)=NULL
+```
+
+```{r}
+BEDS = BEDS[-c(176),] 
+```
+
+```{r}
+row.names(BEDS)=NULL
+```
+
+```{r}
+str(BEDS)
+```
+
+```{r}
+BEDS[11, 1]='Bahamas'
+BEDS[61, 1]='Gambia'
+BEDS[91, 1]='North Korea'
+BEDS[92, 1]='South Korea'
+BEDS[111, 1]='Micronesia'
+BEDS[125, 1]='Macedonia'
+```
+
+- Equipo medico:
+
+```{r}
+equipment[,c(2,5,7,8)]=NULL
+```
+
+```{r}
+colnames(equipment)=c("Country","MagneticResonance","Tomography","NuclearMed","RadioTherapy","Mammography")
+```
+
+```{r}
+
+```
+
